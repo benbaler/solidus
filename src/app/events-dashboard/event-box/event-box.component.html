@@ -1,4 +1,4 @@
-<div class="row" style="border: 1px dashed gray;">
+<div class="row" style="border: 1px dashed gray;" *ngIf="event">
     <div class="col col-md-12">
         <div>Date: {{event.timestamp | date:'medium'}}</div>
         <div>Price: {{event.price | currency}}</div>
