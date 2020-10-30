@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col col-md-6 col-12">
+          <table class="table table-hover">
+              <thead>
+                  <tr>
+                      <th>#</th>
+                      <th>BID</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let bid of snapshot.BID; let i = index">
+                      <td>{{i + 1}}</td>
+                      <td>{{+bid | currency}}</td>
+                  </tr>
+              </tbody>
+          </table>
+  </div>
+  <div class="col col-md-6 col-12">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>ASK</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ask of snapshot.ASK; let i = index">
+                <td>{{i + 1}}</td>
+                <td>{{+ask | currency}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col col-md-6 col-12">
+      <app-event-box [event]="selectedEvent$ | async"></app-event-box>
+    </div>
+    <div class="col col-md-6 col-12">
+      <app-event-player (eventAction)="onEventAction($event)"></app-event-player>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-md-6 col-12">
+      <app-events-table [events]="events$ | async" (selectEvent)="onSelectEvent($event); playSubUnsubscribe()"></app-events-table>
+    </div>
+    <div class="col col-md-6 col-12">
+      <app-event-orderbook [snapshot]="(selectedEvent$ | async).snapshot"></app-event-orderbook>
+    </div>
+  </div>
+</div>
