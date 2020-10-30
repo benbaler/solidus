@@ -32,6 +32,8 @@ export class EventsDashboardComponent implements OnInit, OnDestroy {
     this.onSelectEvent(this.selectedEventIndex);
   }
 
+  // Selecting event by index.
+  // Making sure that the selected index is existed in the array of events and ignoring indexes that not exists.
   onSelectEvent(index: number): void {
     this.selectedEvent$ = this.eventsService.getEventsObservable().pipe(
       map(events => {
@@ -49,6 +51,7 @@ export class EventsDashboardComponent implements OnInit, OnDestroy {
     );
   }
 
+  // Executing the correct logic for the selected action and setting the selected event accordingly.
   onEventAction(type: EventActionTypes): void {
     this.playSubUnsubscribe();
     switch (type) {

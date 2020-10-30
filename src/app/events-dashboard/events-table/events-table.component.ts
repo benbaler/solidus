@@ -17,16 +17,18 @@ export class EventsTableComponent {
     this.selectEvent.emit(index);
   }
 
+  // Sorting events table by selected key.
+  // With a future option to pass the way of ordering the result (ascending or descending).
   onSortEvents(key: string, desc: boolean = false): void {
     this.events = this.events.sort((a, b) => {
-        if (a[key] < b[key]) {
-          return desc ? 1 : -1;
-        }
-        if (a[key] > b[key]) {
-          return desc ? -1 : 1;
-        }
-        return 0;
-      });
+      if (a[key] < b[key]) {
+        return desc ? 1 : -1;
+      }
+      if (a[key] > b[key]) {
+        return desc ? -1 : 1;
+      }
+      return 0;
+    });
   }
 
 }
